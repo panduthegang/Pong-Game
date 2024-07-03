@@ -86,7 +86,7 @@ function draw() {
 
     text(`${player1_score} - ${player2_score}`, width / 2, 20);
     textSize(20); // Set font size for the author text
-    text("Made by Harsh Rathod", width / 2, 50); // Display the author text
+    text("Made by Harsh Rathod❤️", width / 2, 50); // Display the author text
 }
 
 function touchControls() {
