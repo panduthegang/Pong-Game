@@ -86,17 +86,19 @@ function draw() {
 
     text(`${player1_score} - ${player2_score}`, width / 2, 20);
     textSize(20); // Set font size for the author text
-    text("Made by Harsh Rathod❤️", width / 2, 50); // Display the author text
+    text("Made by Harsh Rathod", width / 2, 50); // Display the author text
 }
 
 function touchControls() {
-    if (touches.length > 0) {
-        let touch = touches[0];
-        if (touch.x < width / 2) {
-            player1_y = touch.y - paddle_height / 2;
-        } else {
-            player2_y = touch.y - paddle_height / 2;
-        }
+    let player1Touches = touches.filter(t => t.x < width / 2);
+    let player2Touches = touches.filter(t => t.x >= width / 2);
+
+    if (player1Touches.length > 0) {
+        player1_y = player1Touches[0].y - paddle_height / 2;
+    }
+
+    if (player2Touches.length > 0) {
+        player2_y = player2Touches[0].y - paddle_height / 2;
     }
 }
 
